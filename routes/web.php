@@ -11,6 +11,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/teste', function () use ($router) {
     return $router->app->version();
 });
+
+
+$router->get('/page={page}', 'UserController@index');
