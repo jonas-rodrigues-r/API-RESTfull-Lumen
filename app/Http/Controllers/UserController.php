@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\UserService;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
@@ -20,6 +21,6 @@ class UserController extends Controller
 
     public function index(int $page)
     {
-        return $this->service->index($page);
+        return response()->json($this->service->index($page), Response::HTTP_OK);
     }
 }

@@ -3,10 +3,15 @@
 namespace app\Repositories;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 
 class UserRepository
 {
-    public function index(int $skip)
+    /**
+     * @var int $skip
+     * @return Collection
+     */
+    public function index(int $skip): Collection
     {
         return User::skip($skip)->take(10)->get();
     }
